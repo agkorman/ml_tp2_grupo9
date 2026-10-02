@@ -1,4 +1,3 @@
-kagglehub[pandas-datasets]
 matplotlib
 numpy
 pandas

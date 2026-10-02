@@ -15,5 +15,6 @@ __pycache__/
 !/data/test/.gitkeep
 /resultados/**
 !/resultados/.gitkeep
-!/resultados/graficos/
-!/resultados/graficos/.gitkeep
+
+# Bitácora, tablas y gráficos de trabajo locales
+/documentacion/
