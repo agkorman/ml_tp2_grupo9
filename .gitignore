@@ -1,0 +1,19 @@
+# Entorno local y archivos de Python
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.DS_Store
+.ipynb_checkpoints/
+
+# Datasets y resultados generados; conservar la estructura vacía
+/data/raw/*
+!/data/raw/.gitkeep
+/data/processed/*
+!/data/processed/.gitkeep
+/data/test/*
+!/data/test/.gitkeep
+/resultados/**
+!/resultados/.gitkeep
+!/resultados/graficos/
+!/resultados/graficos/.gitkeep
