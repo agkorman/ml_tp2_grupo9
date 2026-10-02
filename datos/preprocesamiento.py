@@ -1,4 +1,4 @@
-"""Preprocesamiento reutilizable para modelos de clasificación.
+"""Preprocesamiento reutilizable para priorizar clientes antes de la campaña.
 
 El objeto devuelto está sin ajustar. Debe incorporarse a un ``Pipeline`` junto
 con el clasificador para que imputación, codificación y escalado se aprendan
@@ -16,7 +16,6 @@ from sklearn.preprocessing import FunctionTransformer, OneHotEncoder, StandardSc
 
 COLUMNAS_NUMERICAS = (
     "age",
-    "campaign",
     "previous",
     "emp.var.rate",
     "cons.price.idx",
@@ -31,9 +30,6 @@ COLUMNAS_CATEGORICAS = (
     "default",
     "housing",
     "loan",
-    "contact",
-    "month",
-    "day_of_week",
     "poutcome",
 )
 COLUMNAS_ENTRADA = COLUMNAS_NUMERICAS + COLUMNAS_CATEGORICAS + ("pdays",)
@@ -43,7 +39,7 @@ VALOR_SIN_CONTACTO_PREVIO = 999
 
 
 def preparar_variables(datos: pd.DataFrame) -> pd.DataFrame:
-    """Selecciona atributos disponibles antes de la llamada y corrige ``pdays``."""
+    """Selecciona atributos previos a la campaña y corrige ``pdays``."""
     if not isinstance(datos, pd.DataFrame):
         raise TypeError("El preprocesador espera un DataFrame de pandas")
     if "y" in datos.columns:
